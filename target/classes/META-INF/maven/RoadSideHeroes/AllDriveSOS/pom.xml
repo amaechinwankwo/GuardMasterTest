@@ -20,7 +20,7 @@
 	</properties>
 
 	<dependencies>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -28,7 +28,7 @@
 			<version>7.9.0</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -36,7 +36,7 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.18.1</version>
 		</dependency>
-		
+
 		<!--
 		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>
@@ -46,6 +46,88 @@
 		</dependency>
 
 	</dependencies>
+
+
+	<profiles>
+		<profile>
+			<id>Admin</id>
+
+			<build>
+				<pluginManagement>
+
+					<!-- lock down plugins versions to avoid using Maven
+					defaults (may be moved to parent pom) -->
+					<plugins>
+
+						<!--Maven Plugin -->
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.2.5</version>
+
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>testSuites/admin.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+		<profile>
+			<id>Student</id>
+
+			<build>
+				<pluginManagement>
+
+					<!-- lock down plugins versions to avoid using Maven
+					defaults (may be moved to parent pom) -->
+					<plugins>
+
+						<!--Maven Plugin -->
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.2.5</version>
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>testSuites/student.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+		<profile>
+			<id>All</id>
+
+			<build>
+				<pluginManagement>
+
+					<!-- lock down plugins versions to avoid using Maven
+					defaults (may be moved to parent pom) -->
+					<plugins>
+
+						<!--Maven Plugin -->
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.2.5</version>
+
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>testng.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
+	</profiles>
 
 	<build>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven

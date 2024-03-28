@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Admin Test(failed)">
     <classes>
       <class name="guardMaster.Admin">
         <methods>
           <include name="Aftermethod"/>
-          <include name="admin_Delete_Program"/>
           <include name="admin_Add_Admin"/>
+          <include name="admin_Delete_Program"/>
           <include name="admin_Add_Course"/>
-          <include name="admin_Delete_Course"/>
+          <include name="admin_Logout"/>
           <include name="adminLogin"/>
+          <include name="admin_Delete_Course"/>
           <include name="admin_Add_Instructor"/>
         </methods>
       </class> <!-- guardMaster.Admin -->
+    </classes>
+  </test> <!-- Admin Test(failed) -->
+  <test thread-count="5" name="Student Test(failed)">
+    <classes>
       <class name="guardMaster.Student">
         <methods>
           <include name="studentSignUp"/>
@@ -21,5 +26,5 @@
         </methods>
       </class> <!-- guardMaster.Student -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Student Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
